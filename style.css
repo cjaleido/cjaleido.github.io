@@ -161,6 +161,33 @@ h1 {
   text-align: center;
 }
 
+.contact-intro {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.contact-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.email-link {
+  display: block;
+  margin: 0.75rem 0 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   padding: 30px;
