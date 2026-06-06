@@ -177,9 +177,9 @@ h1 {
   max-width: 500px;
   margin: 0 auto;
   padding: 2rem;
-  border: 1px solid #94a3b8;
+  border: 1px solid #64748b;
   border-radius: 16px;
-  background: #fff;
+  background: #94a3b8;
 }
 
 .email-link {
