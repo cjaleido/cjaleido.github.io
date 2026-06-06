@@ -35,6 +35,10 @@ body {
   transition: color 0.2s ease;
 }
 
+.logo:visited {
+  color: #cbd5e1;
+}
+
 .logo:hover {
   color: #38bdf8;
 }
