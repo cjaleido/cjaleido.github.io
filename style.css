@@ -30,6 +30,13 @@ body {
 .logo {
   font-weight: bold;
   font-size: 2rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: #38bdf8;
 }
 
 nav a {
