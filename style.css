@@ -223,3 +223,43 @@ footer {
     min-height: auto;
   }
 }
+
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-stack {
+  position: relative;
+  width: 420px;
+  height: 520px;
+}
+
+.stack-img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.portrait {
+  z-index: 4;
+}
+
+.sketch {
+  opacity: 0.3;
+}
+
+.sketch-1 {
+  z-index: 3;
+}
+
+.sketch-2 {
+  z-index: 2;
+}
+
+.sketch-3 {
+  z-index: 1;
+}
