@@ -156,10 +156,7 @@ a {
   padding: 96px 0;
 }
 
-/* HERO SECTION
-   The first version used a 3-column grid with a large flexible empty column on the left.
-   That pushed the text toward the middle and made the artwork collide with the headline.
-   This version pins the text closer to the left and keeps the visual stack safely on the right. */
+/* HERO SECTION - Fixed for better image display */
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -171,7 +168,7 @@ a {
     minmax(0, 620px)
     minmax(520px, 1fr);
   align-items: center;
-  background: linear-gradient(135deg, var(--dark) 0%, #2a3238 100%);
+  background: var(--white);
   overflow: hidden;
   position: relative;
   contain: layout style paint;
@@ -199,7 +196,7 @@ a {
 .hero h1 {
   max-width: 680px;
   margin: 0;
-  color: var(--light);
+  color: var(--dark);
   font-size: clamp(2.4rem, 5.2vw, 4.6rem);
   line-height: 1.05;
   letter-spacing: -0.06em;
@@ -210,7 +207,7 @@ a {
 .hero-copy {
   max-width: 580px;
   margin: 2rem 0 0;
-  color: rgba(245, 245, 245, 0.86);
+  color: var(--muted);
   font-weight: 500;
   line-height: 1.65;
   font-size: clamp(1rem, 2vw, 1.1rem);
@@ -266,13 +263,13 @@ a {
 }
 
 .btn-secondary {
-  color: var(--light);
-  border-color: rgba(245, 245, 245, 0.58);
-  background: rgba(245, 245, 245, 0.02);
+  color: var(--ink);
+  border-color: rgba(48, 56, 65, 0.28);
+  background: rgba(48, 56, 65, 0.02);
 }
 
 .btn-secondary:hover {
-  background: rgba(245, 245, 245, 0.06);
+  background: rgba(48, 56, 65, 0.08);
 }
 
 .hero-visual {
@@ -283,25 +280,28 @@ a {
   min-height: 650px;
   z-index: 2;
   contain: layout style;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sketch-stack {
   position: absolute;
-  top: 0;
-  right: 1.5vw;
-  width: min(560px, 44vw);
-  height: 100%;
-  transform: rotate(-7deg);
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%) rotate(-7deg);
+  width: min(400px, 35vw);
+  height: 400px;
   z-index: 1;
   contain: layout style paint;
 }
 
 .paper {
   position: absolute;
-  width: clamp(220px, 25vw, 360px);
-  aspect-ratio: 1;
+  width: 280px;
+  height: 280px;
   background: var(--white);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.1);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -310,44 +310,44 @@ a {
   will-change: transform;
 }
 
-.paper img,
-.paper picture {
+.paper img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  padding: 20px;
 }
 
 .paper:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 34px 70px rgba(0, 0, 0, 0.15);
 }
 
 .paper-one {
-  top: -1%;
-  right: 0;
-  transform: rotate(18deg);
+  top: 0;
+  right: 20px;
+  transform: rotate(12deg);
 }
 
 .paper-two {
-  top: 31%;
-  right: 34%;
-  transform: rotate(0deg);
+  top: 50px;
+  right: -80px;
+  transform: rotate(-8deg);
 }
 
 .paper-three {
-  bottom: 0;
-  right: 20%;
-  transform: rotate(-8deg);
+  top: 120px;
+  right: 60px;
+  transform: rotate(5deg);
 }
 
 .profile-cutout {
   position: absolute;
-  right: -10%;
+  right: -8%;
   bottom: -1px;
-  height: min(82vh, 720px);
+  height: min(70vh, 600px);
   max-width: none;
   z-index: 3;
-  filter: drop-shadow(-22px 24px 48px rgba(0, 0, 0, 0.24));
+  filter: drop-shadow(-12px 12px 24px rgba(0, 0, 0, 0.1));
   will-change: filter;
 }
 
@@ -826,7 +826,7 @@ a {
   }
 }
 
-/* ===== MOBILE TABLET STYLES (768px - 980px) ===== */
+/* ===== MOBILE TABLET STYLES (980px - down) ===== */
 @media (max-width: 980px) {
   :root {
     --nav-height: 74px;
@@ -872,41 +872,58 @@ a {
     background: rgba(255, 255, 255, 0.1);
   }
 
+  /* HERO responsive for tablets */
   .hero {
     grid-template-columns: 1fr;
-    min-height: auto;
-    padding: calc(var(--nav-height) + 56px) 24px 0;
+    min-height: 100vh;
+    padding: calc(var(--nav-height) + 40px) 24px 40px;
   }
 
   .hero-content {
     grid-column: 1;
-    padding: 0 0 3rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 14vw, 5.4rem);
+    padding: 0;
+    margin-bottom: 3rem;
   }
 
   .hero-visual {
     grid-column: 1;
-    min-height: 520px;
-    height: 58vh;
-    margin: 0 -24px;
+    height: auto;
+    min-height: 400px;
+    margin-top: 2rem;
   }
 
   .sketch-stack {
-    right: 8vw;
-    width: 70vw;
+    position: static;
+    width: 100%;
+    height: 350px;
+    transform: rotate(-7deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .paper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  .paper-one,
+  .paper-two,
+  .paper-three {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
   }
 
   .profile-cutout {
-    right: -17%;
-    height: min(62vh, 560px);
-  }
-
-  .service-grid,
-  .case-grid {
-    grid-template-columns: 1fr;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    height: 250px;
+    margin-top: 1rem;
   }
 }
 
@@ -931,26 +948,27 @@ a {
     font-size: 1rem;
   }
 
+  .hero {
+    min-height: auto;
+    padding: calc(var(--nav-height) + 30px) 16px 30px;
+  }
+
   .hero-visual {
-    min-height: 430px;
-    height: 55vh;
+    min-height: 300px;
+  }
+
+  .sketch-stack {
+    height: 300px;
+    gap: 15px;
   }
 
   .paper {
-    width: clamp(180px, 55vw, 270px);
-  }
-
-  .paper-two {
-    right: 26%;
-  }
-
-  .paper-three {
-    right: 18%;
+    width: 160px;
+    height: 160px;
   }
 
   .profile-cutout {
-    right: -35%;
-    height: min(56vh, 470px);
+    height: 200px;
   }
 
   .message {
@@ -1012,11 +1030,11 @@ a {
   }
 
   .hero {
-    padding: calc(var(--nav-height) + 40px) 16px 0;
+    padding: calc(var(--nav-height) + 24px) 16px 24px;
   }
 
   .hero-content {
-    padding: 0 0 2rem;
+    padding: 0;
   }
 
   .hero h1 {
@@ -1028,18 +1046,27 @@ a {
   }
 
   .hero-visual {
-    min-height: 380px;
-    height: 50vh;
-    margin: 0 -16px;
+    min-height: 280px;
+    margin: 2rem 0;
   }
 
-  .profile-cutout {
-    right: -45%;
-    height: min(50vh, 400px);
+  .sketch-stack {
+    height: 280px;
+    gap: 10px;
   }
 
   .paper {
-    width: clamp(160px, 50vw, 240px);
+    width: 140px;
+    height: 140px;
+  }
+
+  .paper img {
+    padding: 12px;
+  }
+
+  .profile-cutout {
+    height: 180px;
+    display: none;
   }
 
   .intro-grid {
