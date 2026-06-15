@@ -225,41 +225,73 @@ footer {
 }
 
 
+/* Hero Image Stack */
+
 .hero-visual {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .image-stack {
   position: relative;
   width: 420px;
   height: 520px;
+  overflow: hidden;
 }
 
 .stack-img {
   position: absolute;
-  width: 100%;
   height: auto;
   object-fit: contain;
+  transition: transform 0.35s ease;
 }
 
-.portrait3 {
+.profile3 {
   z-index: 4;
+  width: 95%;
+  right: -70px;
+  bottom: 0;
 }
 
 .sketch {
-  opacity: 0.3;
+  z-index: 1;
+  opacity: 0.95;
+  width: 55%;
+  background: transparent;
 }
 
 .sketch-1 {
-  z-index: 3;
+  top: 210px;
+  left: 35px;
+  transform: rotate(-8deg);
 }
 
 .sketch-2 {
-  z-index: 2;
+  top: 95px;
+  left: 60px;
+  transform: rotate(6deg);
 }
 
 .sketch-3 {
-  z-index: 1;
+  top: 0;
+  left: 120px;
+  transform: rotate(-3deg);
+}
+
+.image-stack:hover .profile3 {
+  transform: translateX(-8px) rotate(1deg);
+}
+
+.image-stack:hover .sketch-1 {
+  transform: rotate(-11deg) translateY(-6px);
+}
+
+.image-stack:hover .sketch-2 {
+  transform: rotate(9deg) translateX(-5px);
+}
+
+.image-stack:hover .sketch-3 {
+  transform: rotate(-6deg) translateY(5px);
 }
