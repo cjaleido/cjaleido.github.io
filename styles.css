@@ -1118,4 +1118,39 @@ a {
   .case-image {
     height: 200px;
   }
+  /* ===== HERO WHITE BACKGROUND FIX ===== */
+
+.hero {
+  background: #F5F5F5 !important;
+  color: #303841 !important;
+}
+
+.hero h1,
+.hero-title,
+#hero-title {
+  color: #303841 !important;
+}
+
+.hero-copy {
+  color: #68747d !important;
+}
+
+.hero .eyebrow {
+  color: #76ABAE !important;
+}
+
+.hero .btn-primary {
+  background: #FF5722;
+  color: #ffffff;
+}
+
+.hero .btn-secondary {
+  background: transparent;
+  color: #303841;
+  border-color: rgba(48, 56, 65, 0.28);
+}
+
+.hero .btn-secondary:hover {
+  background: rgba(48, 56, 65, 0.08);
+}
 }
