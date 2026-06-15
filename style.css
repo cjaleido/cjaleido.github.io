@@ -229,9 +229,10 @@ footer {
 
 .hero-visual {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   overflow: hidden;
+  width: 100%;
 }
 
 .image-stack {
@@ -239,49 +240,57 @@ footer {
   width: 420px;
   height: 520px;
   overflow: hidden;
+  background: transparent;
 }
 
 .stack-img {
   position: absolute;
+  display: block;
   height: auto;
   object-fit: contain;
   transition: transform 0.35s ease;
-}
-
-.profile3 {
-  z-index: 4;
-  width: 95%;
-  right: -70px;
-  bottom: 0;
-}
-
-.sketch {
-  z-index: 1;
-  opacity: 0.95;
-  width: 55%;
   background: transparent;
 }
 
-.sketch-1 {
-  top: 210px;
-  left: 35px;
+/* Main portrait, intentionally pushed offscreen to the right */
+.profile3 {
+  z-index: 4;
+  width: 95%;
+  right: -125px;
+  bottom: 0;
+  background: transparent;
+}
+
+/* Shared sketch styling */
+.sketch {
+  z-index: 1;
+  width: 58%;
+  opacity: 1;
+  background: transparent;
+}
+
+/* Individual sketch placements */
+.sketch1 {
+  top: 245px;
+  left: 45px;
   transform: rotate(-8deg);
 }
 
-.sketch-2 {
-  top: 95px;
-  left: 60px;
+.sketch2 {
+  top: 125px;
+  left: 35px;
   transform: rotate(6deg);
 }
 
-.sketch-3 {
-  top: 0;
-  left: 120px;
-  transform: rotate(-3deg);
+.sketch3 {
+  top: 5px;
+  left: 75px;
+  transform: rotate(-4deg);
 }
 
+/* Subtle hover movement */
 .image-stack:hover .profile3 {
-  transform: translateX(-8px) rotate(1deg);
+  transform: translateX(-10px) rotate(1deg);
 }
 
 .image-stack:hover .sketch1 {
