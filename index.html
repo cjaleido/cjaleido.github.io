@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="CJ Aleido portfolio for graphic design, customer service, virtual assistance, and practical problem-solving." />
+  <meta name="theme-color" content="#76ABAE" />
   <title>CJ Aleido | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="styles.css" as="style" />
+  <link rel="preload" as="font" href="https://fonts.gstatic.com/s/inter/v18/UcCO_p8oxiS64c3rUUVSBC-V5Za67.woff2" type="font/woff2" crossorigin />
+  
+  <!-- Font optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-</head>
+head>
 <body>
   <header class="site-header" id="top">
     <nav class="navbar" aria-label="Main navigation">
@@ -49,17 +56,29 @@
       <div class="hero-visual reveal" aria-hidden="true">
         <div class="sketch-stack">
           <article class="paper paper-one">
-            <img src="images/sketch1.png" alt="" />
+            <picture>
+              <source srcset="images/sketch1.webp" type="image/webp" />
+              <img src="images/sketch1.png" alt="" width="360" height="360" loading="lazy" />
+            </picture>
           </article>
           <article class="paper paper-two">
-            <img src="images/sketch3.png" alt="" />
+            <picture>
+              <source srcset="images/sketch3.webp" type="image/webp" />
+              <img src="images/sketch3.png" alt="" width="360" height="360" loading="lazy" />
+            </picture>
           </article>
           <article class="paper paper-three">
-            <img src="images/sketch2.png" alt="" />
+            <picture>
+              <source srcset="images/sketch2.webp" type="image/webp" />
+              <img src="images/sketch2.png" alt="" width="360" height="360" loading="lazy" />
+            </picture>
           </article>
         </div>
 
-        <img class="profile-cutout" src="images/profile3-cutout.png" alt="" />
+        <picture>
+          <source srcset="images/profile3-cutout.webp" type="image/webp" />
+          <img class="profile-cutout" src="images/profile3-cutout.png" alt="" width="720" height="720" loading="lazy" />
+        </picture>
       </div>
     </section>
 
@@ -171,7 +190,7 @@
       </div>
     </section>
 
-    <section class="section-block ai-section" aria-labelledby="ai-title">
+    <section class="section-block ai-section" id="ai-section" aria-labelledby="ai-title">
       <div class="ai-copy reveal">
         <p class="eyebrow">Interactive Element</p>
         <h2 id="ai-title">Ask the portfolio.</h2>
@@ -190,7 +209,7 @@
           </div>
         </div>
 
-        <div class="chat-window" id="chatWindow">
+        <div class="chat-window" id="chatWindow" role="log" aria-live="polite">
           <div class="message bot">Hi, I'm CJ's portfolio guide. Ask about services, process, or experience.</div>
         </div>
 

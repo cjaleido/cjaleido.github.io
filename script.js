@@ -1,14 +1,18 @@
+// Navigation toggle
 const navToggle = document.querySelector("#navToggle");
 const navLinks = document.querySelector("#navLinks");
 const year = document.querySelector("#year");
 
+// Set current year
 year.textContent = new Date().getFullYear();
 
+// Mobile nav toggle
 navToggle.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("is-open");
   navToggle.setAttribute("aria-expanded", String(isOpen));
 });
 
+// Close nav on link click
 navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("is-open");
@@ -16,6 +20,7 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+// Intersection Observer for reveal animations
 const revealItems = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
@@ -27,11 +32,15 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.16 }
+  {
+    threshold: 0.16,
+    rootMargin: "0px 0px -100px 0px"
+  }
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
+// Chat functionality
 const chatWindow = document.querySelector("#chatWindow");
 const chatForm = document.querySelector("#chatForm");
 const chatInput = document.querySelector("#chatInput");
@@ -64,6 +73,7 @@ function addMessage(text, type) {
   const message = document.createElement("div");
   message.className = `message ${type}`;
   message.textContent = text;
+  message.setAttribute("role", "article");
   chatWindow.appendChild(message);
   chatWindow.scrollTop = chatWindow.scrollHeight;
 }
@@ -86,9 +96,13 @@ function sendQuestion(question) {
   addMessage(cleanQuestion, "user");
   chatInput.value = "";
 
+  // Check for prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const delay = prefersReducedMotion ? 0 : 360;
+
   window.setTimeout(() => {
     addMessage(getAnswer(cleanQuestion), "bot");
-  }, 360);
+  }, delay);
 }
 
 chatForm.addEventListener("submit", (event) => {
@@ -96,8 +110,47 @@ chatForm.addEventListener("submit", (event) => {
   sendQuestion(chatInput.value);
 });
 
-promptButtons.forEach((button) => {
+prompButton.forEach((button) => {
   button.addEventListener("click", () => {
     sendQuestion(button.dataset.prompt);
   });
 });
+
+// Performance optimization: Lazy load images when in viewport
+if ("IntersectionObserver" in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.tagName === "IMG" && img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute("data-src");
+        }
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  document.querySelectorAll("img[data-src]").forEach((img) => imageObserver.observe(img));
+}
+
+// Detect touch device for better UX
+const isTouchDevice = () => {
+  return (typeof window !== "undefined" &&
+    ("ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0));
+};
+
+if (isTouchDevice()) {
+  document.body.classList.add("touch-device");
+}
+
+// Log performance metrics
+if (window.performance && window.performance.measure) {
+  window.addEventListener("load", () => {
+    const perfData = window.performance.timing;
+    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+    console.log(`Page load time: ${pageLoadTime}ms`);
+  });
+}
