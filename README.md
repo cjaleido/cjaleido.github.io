@@ -1,6 +1,6 @@
-# CJ Aleido Portfolio Starter
+# CJ Aleido Portfolio
 
-This is a GitHub Pages ready static website.
+
 
 ## Files
 - `index.html`
@@ -15,7 +15,3 @@ This is a GitHub Pages ready static website.
 4. Go to Settings > Pages.
 5. Set source to your main branch.
 6. Wait for GitHub to publish.
-
-## Notes
-- `profile3-cutout.png` was generated from `profile3.png` because the uploaded profile image had a white background, not transparency.
-- The mini chatbot is a front-end demo only. It does not use OpenAI yet.
