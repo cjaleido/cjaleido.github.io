@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-head>
+</head>
 <body>
   <header class="site-header" id="top">
     <nav class="navbar" aria-label="Main navigation">
@@ -39,6 +39,7 @@ head>
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="hero section-block" id="home" aria-labelledby="hero-title">
       <div class="hero-content reveal">
         <p class="eyebrow">Graphic Designer • Customer Service Pro • Virtual Assistant</p>
@@ -77,11 +78,12 @@ head>
 
         <picture>
           <source srcset="images/profile3-cutout.webp" type="image/webp" />
-          <img class="profile-cutout" src="images/profile3-cutout.png" alt="" width="720" height="720" loading="lazy" />
+          <img class="profile-cutout" src="images/profile3-cutout.png" alt="CJ Aleido" width="720" height="720" loading="lazy" />
         </picture>
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section class="section-block intro-grid" id="about" aria-labelledby="about-title">
       <div class="section-label reveal">About</div>
       <div class="section-copy reveal">
@@ -111,6 +113,7 @@ head>
       </div>
     </section>
 
+    <!-- SERVICE SECTION -->
     <section class="section-block service-section" id="service" aria-labelledby="service-title">
       <div class="section-heading reveal">
         <p class="eyebrow">Service</p>
@@ -119,20 +122,24 @@ head>
 
       <div class="service-grid">
         <article class="service-card reveal">
+          <div class="service-icon">🎨</div>
           <h3>Graphic Design</h3>
           <p>Social media visuals, brand assets, presentation layouts, and clean content design.</p>
         </article>
         <article class="service-card reveal">
+          <div class="service-icon">✨</div>
           <h3>Virtual Assistance</h3>
           <p>Admin tasks, scheduling, research, inbox support, documentation, and organized follow-through.</p>
         </article>
         <article class="service-card reveal">
+          <div class="service-icon">💬</div>
           <h3>Customer Support</h3>
           <p>Clear communication, problem-solving, ticket handling, and customer-first conversations.</p>
         </article>
       </div>
     </section>
 
+    <!-- PORTFOLIO SECTION -->
     <section class="section-block product-section" id="portfolio" aria-labelledby="portfolio-title">
       <div class="section-heading reveal">
         <p class="eyebrow">Portfolio</p>
@@ -141,55 +148,80 @@ head>
 
       <div class="case-grid">
         <article class="case-card reveal">
-          <div class="case-top">
-            <span class="case-type">Design System</span>
-            <span>01</span>
+          <div class="case-header">
+            <div class="case-top">
+              <span class="case-type">Design System</span>
+              <span class="case-number">01</span>
+            </div>
+            <picture class="case-image">
+              <source srcset="images/sketch1.webp" type="image/webp" />
+              <img src="images/sketch1.png" alt="Portfolio Website Hero Design" width="300" height="300" loading="lazy" />
+            </picture>
           </div>
-          <h3>Portfolio Website Hero</h3>
-          <p>
-            Built a clean personal brand hero with layered sketches, fixed navigation, and clear calls to action.
-          </p>
-          <ul>
-            <li><strong>Problem:</strong> The first screen needed personality without becoming messy.</li>
-            <li><strong>Decision:</strong> Use bold typography, a dark canvas, and visual artwork on the right.</li>
-            <li><strong>Result:</strong> A stronger first impression that feels personal and professional.</li>
-          </ul>
+          <div class="case-content">
+            <h3>Portfolio Website Hero</h3>
+            <p>
+              Built a clean personal brand hero with layered sketches, fixed navigation, and clear calls to action.
+            </p>
+            <ul>
+              <li><strong>Problem:</strong> The first screen needed personality without becoming messy.</li>
+              <li><strong>Decision:</strong> Use bold typography, a dark canvas, and visual artwork on the right.</li>
+              <li><strong>Result:</strong> A stronger first impression that feels personal and professional.</li>
+            </ul>
+          </div>
         </article>
 
         <article class="case-card reveal">
-          <div class="case-top">
-            <span class="case-type">Customer Experience</span>
-            <span>02</span>
+          <div class="case-header">
+            <div class="case-top">
+              <span class="case-type">Customer Experience</span>
+              <span class="case-number">02</span>
+            </div>
+            <picture class="case-image">
+              <source srcset="images/sketch2.webp" type="image/webp" />
+              <img src="images/sketch2.png" alt="Support Workflow Cleanup" width="300" height="300" loading="lazy" />
+            </picture>
           </div>
-          <h3>Support Workflow Cleanup</h3>
-          <p>
-            A sample case study layout for documenting customer issues, decisions, and service improvements.
-          </p>
-          <ul>
-            <li><strong>Problem:</strong> Support conversations can get confusing without a clear structure.</li>
-            <li><strong>Decision:</strong> Organize the flow around issue, action, outcome, and next step.</li>
-            <li><strong>Result:</strong> Faster understanding and less back-and-forth for the user.</li>
-          </ul>
+          <div class="case-content">
+            <h3>Support Workflow Cleanup</h3>
+            <p>
+              A sample case study layout for documenting customer issues, decisions, and service improvements.
+            </p>
+            <ul>
+              <li><strong>Problem:</strong> Support conversations can get confusing without a clear structure.</li>
+              <li><strong>Decision:</strong> Organize the flow around issue, action, outcome, and next step.</li>
+              <li><strong>Result:</strong> Faster understanding and less back-and-forth for the user.</li>
+            </ul>
+          </div>
         </article>
 
         <article class="case-card reveal">
-          <div class="case-top">
-            <span class="case-type">Business Website</span>
-            <span>03</span>
+          <div class="case-header">
+            <div class="case-top">
+              <span class="case-type">Business Website</span>
+              <span class="case-number">03</span>
+            </div>
+            <picture class="case-image">
+              <source srcset="images/sketch3.webp" type="image/webp" />
+              <img src="images/sketch3.png" alt="Small Business Landing Page" width="300" height="300" loading="lazy" />
+            </picture>
           </div>
-          <h3>Small Business Landing Page</h3>
-          <p>
-            A future-ready section for client website samples, useful for cold outreach and demos.
-          </p>
-          <ul>
-            <li><strong>Problem:</strong> Many small businesses lack a clear online presentation.</li>
-            <li><strong>Decision:</strong> Start with a simple landing page that explains the offer fast.</li>
-            <li><strong>Result:</strong> Easier discovery, better trust, and a cleaner way to receive inquiries.</li>
-          </ul>
+          <div class="case-content">
+            <h3>Small Business Landing Page</h3>
+            <p>
+              A future-ready section for client website samples, useful for cold outreach and demos.
+            </p>
+            <ul>
+              <li><strong>Problem:</strong> Many small businesses lack a clear online presentation.</li>
+              <li><strong>Decision:</strong> Start with a simple landing page that explains the offer fast.</li>
+              <li><strong>Result:</strong> Easier discovery, better trust, and a cleaner way to receive inquiries.</li>
+            </ul>
+          </div>
         </article>
       </div>
     </section>
 
+    <!-- AI SECTION -->
     <section class="section-block ai-section" id="ai-section" aria-labelledby="ai-title">
       <div class="ai-copy reveal">
         <p class="eyebrow">Interactive Element</p>
@@ -226,6 +258,7 @@ head>
       </div>
     </section>
 
+    <!-- EXPERIENCE SECTION -->
     <section class="section-block experience-section" id="experience" aria-labelledby="experience-title">
       <div class="section-heading reveal">
         <p class="eyebrow">Experience</p>
@@ -251,6 +284,7 @@ head>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section class="section-block contact-section" id="contact" aria-labelledby="contact-title">
       <div class="contact-card reveal">
         <p class="eyebrow">Contact</p>
