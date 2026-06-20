@@ -1,0 +1,24 @@
+/* subtle glowing hue animation — apply .highlight to the paragraph */
+.highlight {
+  --h: 210; /* starting hue */
+  color: hsl(var(--h) 85% 45%);
+  text-shadow:
+    0 0 8px hsl(var(--h) 85% 55% / 0.9),
+    0 0 20px hsl(var(--h) 85% 45% / 0.35);
+  animation: hueShift 8s linear infinite;
+  will-change: color;
+}
+
+/* animate the custom property --h from one hue to another */
+@keyframes hueShift {
+  from { --h: 200; }
+  to   { --h: 340; }
+}
+
+/* Accessible fallback: disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .highlight {
+    animation: none;
+    --h: 220;
+  }
+}
